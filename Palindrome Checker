@@ -1,0 +1,15 @@
+function palindrome(str) {
+  let arrStr = str.toLowerCase().match(/[a-zA-Z0-9]/g);
+  let backwardStr = [];
+  let boolValArr = [];
+  
+	for (let i=arrStr.length-1; i>=0; i--){
+      backwardStr.push(arrStr[i]);
+    }
+    for (let j=0; j<arrStr.length; j++){
+      boolValArr.push(arrStr[j] === backwardStr[j])  
+    		}
+  	return boolValArr.every(function (a) { if(a === true){return true} else {false}})    
+}
+
+console.log(palindrome("My age is 0, 0 si ega ym."));
